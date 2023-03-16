@@ -16,7 +16,7 @@
 <body>
     <h3>Find the mouse by Navya sri </h3>
     <p>Click on the bushes to search for the mouse, beware the cat</p>
-    <p id="Bushes">Number of bushes checked is zero</p>
+    <p id="bushes">Number of bushes checked is zero</p>
     <p id-="Penalty">Penalty is zero</p>
     <p>Click for help</p>
     <p id="Help">Help report</p>
@@ -149,22 +149,19 @@
         function help() {
           const catRow = Math.floor(catLocation / 6);
           const catCol = catLocation % 6;
-        
           const lastRow = Math.floor(lastCheck / 6);
           const lastCol = lastCheck % 6;
         
           if (Math.abs(catRow - lastRow) <= 1 && Math.abs(catCol - lastCol) <= 1) {
             return "meow";
           }
-        
           const mouseRow = Math.floor(mouseLocation / 6);
           const mouseCol = mouseLocation % 6;
         
           if (Math.abs(mouseRow - lastRow) <= 1 && Math.abs(mouseCol - lastCol) <= 1) {
             return "squeak";
           }
-        
-          return "sorry, no help available";
+         return "sorry, no help available";
         const helpButton = document.getElementById("help-button");
         helpButton.onclick = help;
         }
